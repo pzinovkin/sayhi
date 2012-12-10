@@ -49,12 +49,8 @@ find %{buildroot}%{__prefix}/%{name}/ -type f \
     -exec sed -i 's:'%{buildroot}'::' {} \;
 
 %install
-# fixes broken md5 in rpm
-/usr/sbin/prelink -u %{buildroot}%{__prefix}/%{name}/bin/python
-/usr/sbin/prelink -u %{buildroot}%{__prefix}/%{name}/bin/python2.7
-
 # compile py files
-%{buildroot}%{__prefix}/%{name}/env/bin/python \
+%{buildroot}%{__prefix}/%{name}/bin/python \
     -m compileall -qf %{buildroot}%{__prefix}/%{name}/
 
 mkdir -p %{buildroot}%{__prefix}/bin/
