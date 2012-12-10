@@ -7,5 +7,5 @@ Building RPM
 ------------
 
 ::
-    rpmbuild --define "version 0.1" --define "release 1"\
-        -bb contrib/sayhi.spec
+
+    rpmbuild --define "version 0.1" --define "release 1" -bb contrib/sayhi.spec
